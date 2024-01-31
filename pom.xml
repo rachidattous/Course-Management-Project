@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>1.8</java.version>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <java.version>17</java.version>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
 
         <spring-cloud.version>2020.0.3</spring-cloud.version>
         <spring.cloud.kubernetes>1.1.7.RELEASE</spring.cloud.kubernetes>
@@ -30,7 +30,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>CourseManagement</artifactId>
+    <artifactId>Course</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CourseManagement</name>
     <description>CourseManagement</description>
@@ -84,6 +84,13 @@
                     <artifactId>jsr311-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
         </dependency>
 
 
@@ -283,8 +290,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
-
-
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -304,11 +309,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
+<!--                <version>3.8.0</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                </configuration>-->
             </plugin>
 
             <plugin>
