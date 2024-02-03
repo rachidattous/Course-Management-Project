@@ -28,11 +28,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker image') {
-            steps {
-                sh 'docker build -t course-repo:latest .'
-            }
-        }
+
         stage('Build Docker image') {
             steps {
                 script {
