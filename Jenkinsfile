@@ -15,14 +15,7 @@ pipeline {
             }
         }
 
-        stage('Generate report') {
-                    steps {
-                        // Générez le rapport JaCoCo
-                        sh 'mvn jacoco:report'
-                        // Archiver le rapport comme artefact
-                        archiveArtifacts 'target/site/jacoco/index.html'
-                    }
-                }
+
 
         stage('Build Docker image') {
             steps {
