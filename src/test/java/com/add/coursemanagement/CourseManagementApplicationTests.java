@@ -19,10 +19,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import static com.google.inject.matcher.Matchers.any;
-import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.keycloak.KeyPairVerifier.verify;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
@@ -63,18 +60,6 @@ class CourseManagementApplicationTests {
         verify(courseRepository, times(1)).save(Mockito.<Course>any());
 
     }
-
-//    @Test
-//    void testCreateCourseUserNotFound() {
-//        CourseDTO courseDTO = new CourseDTO();
-//        courseDTO.setUserId("nonExistingUserId");
-//
-//        when(iRestService.getActiveUserIds()).thenReturn((List<String>) Set.of("existingUserId"));
-//
-//        // Act and Assert
-//        assertThrows(ApiException.class, () -> courseService.createCourse(courseDTO), "User not found exception should be thrown");
-//        verify(courseRepository, never()).save(Mockito.<Course>any());
-//    }
 
 
 }
