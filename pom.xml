@@ -30,7 +30,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Course</artifactId>
+    <artifactId>CourseManagement</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CourseManagement</name>
     <description>CourseManagement</description>
