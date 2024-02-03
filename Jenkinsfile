@@ -8,11 +8,21 @@ pipeline {
                 sh 'ls'
             }
         }
+
         stage('Build Jar') {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
         }
+
+        stage('Generate report') {
+                    steps {
+                        // Générez le rapport JaCoCo
+                        sh 'mvn jacoco:report'
+                        // Archiver le rapport comme artefact
+                        archiveArtifacts 'target/site/jacoco/index.html'
+                    }
+                }
 
         stage('Build Docker image') {
             steps {
