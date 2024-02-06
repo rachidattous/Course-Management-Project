@@ -33,13 +33,6 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t course-repo:latest .'
-
-                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker-hub-credentials-id', usernameVariable: 'rachidattous', passwordVariable: '123456klm']]) {
-
-                        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
-
-                        sh 'docker push course-repo:latest'
-                    }
                 }
             }
         }
