@@ -27,7 +27,14 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    sh 'docker build -t course-repo:latest .'
+                    sh 'docker build -t rachidattous/course-repo:0.1 .'
+
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USER', passwordVariable:'PASS')]){
+
+                        sh 'echo $PASS | docker login -u $USER --password-stdin'
+
+                        sh 'docker push rachidattous/course-repo:0.1'
+                    }
                 }
             }
         }
