@@ -21,12 +21,7 @@ pipeline {
             }
         }
 
-        stage('Generate report') {
-            steps {
-                sh 'mvn jacoco:report'
-                archiveArtifacts 'target/site/jacoco/index.html'
-            }
-        }
+
 
 
         stage('Build Docker image') {
